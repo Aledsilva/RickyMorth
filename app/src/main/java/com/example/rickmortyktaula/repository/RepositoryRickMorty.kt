@@ -3,7 +3,7 @@ package com.example.rickmortyktaula.repository
 import android.content.Context
 import com.example.rickmortyktaula.data.AppDataBase
 import com.example.rickmortyktaula.model.CharacterResponse
-import com.example.rickmortyktaula.model.Result
+import com.example.rickmortyktaula.model.Character
 import com.example.rickmortyktaula.network.EndPointApi
 import com.example.rickmortyktaula.network.RetrofitInit
 
@@ -22,14 +22,14 @@ class RepositoryRickMorty{
     suspend fun getCharacterService(): CharacterResponse = serviceRick.getResponseCharacter()
 
     //Insere ao bando de dados
-    suspend fun inserirItensNaLista(context: Context, team: Result):
+    suspend fun inserirItensNaLista(context: Context, team: Character):
             Unit= initDataBase(context).accessCharacter().inserirPersonagem(team)
 
     //remove
-    suspend fun removerIntens(context: Context, team: Result):
+    suspend fun removerIntens(context: Context, team: Character):
             Unit= initDataBase(context).accessCharacter().retirarPersonagem(team)
 
 
     suspend fun pegarTodaLista(context: Context):
-            MutableList<Result> = initDataBase(context).accessCharacter().getAllCharactersRoom()
+            MutableList<Character> = initDataBase(context).accessCharacter().getAllCharactersRoom()
 }

@@ -2,18 +2,17 @@ package com.example.rickmortyktaula.view.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.rickmortyktaula.R
-import com.example.rickmortyktaula.model.Result
+import com.example.rickmortyktaula.model.Character
 import com.example.rickmortyktaula.view.DetailsAct
 import com.squareup.picasso.Picasso
 
 class AdapterCharacter(
-    private val list: MutableSet<Result>,
+    private val list: MutableSet<Character>,
     private val context: Context
 ) : RecyclerView.Adapter<ViewHolderCharacter>() {
 

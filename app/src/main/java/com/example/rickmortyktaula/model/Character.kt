@@ -1,16 +1,15 @@
 package com.example.rickmortyktaula.model
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "characters")
-data class Result(
+data class Character(
     val created: String = "",
-    val episode: List<String> = mutableListOf(),
     val gender: String = "",
 
     @PrimaryKey(autoGenerate = true)

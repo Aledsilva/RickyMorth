@@ -1,9 +1,9 @@
 package com.example.rickmortyktaula.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import android.content.Context
-import com.example.rickmortyktaula.model.Result
+import com.example.rickmortyktaula.model.Character
 import com.example.rickmortyktaula.repository.RepositoryRickMorty
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,13 +12,13 @@ import kotlinx.coroutines.launch
 class ViewModelRoom : ViewModel() {
 
     val repository = RepositoryRickMorty()
-    val listResult = MutableLiveData<MutableList<Result>>()
+    val listResult = MutableLiveData<MutableList<Character>>()
 
-    fun inserirItem(context: Context, favorito: Result) = CoroutineScope(Dispatchers.IO).launch {
+    fun inserirItem(context: Context, favorito: Character) = CoroutineScope(Dispatchers.IO).launch {
         repository.inserirItensNaLista(context,favorito)
     }
 
-    fun removerFavorito(context: Context, favorito: Result) = CoroutineScope(Dispatchers.IO).launch {
+    fun removerFavorito(context: Context, favorito: Character) = CoroutineScope(Dispatchers.IO).launch {
         repository.removerIntens(context,favorito)
     }
 
